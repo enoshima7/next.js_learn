@@ -3,25 +3,26 @@ import Link from 'next/link'
 import Router from 'next/router'
 
 const Home = () => {
-  function gotoA() {
-    Router.push('/jspangA')
+  function gotoXJJ() {
+    Router.push({
+      pathname: '/xjj',
+      query: { name: '井孔' },
+    })
   }
   return (
     <>
       <div>我是首页</div>
       <div>
-        <Link href='/jspangA'>
-          <a>jspangA</a>
+        <Link href={{ pathname: 'xjj', query: { name: '范冰冰' } }}>
+          <a>选择范冰冰</a>
+        </Link>
+        <br />
+        <Link href='/xjj?name=cjk'>
+          <a>选择仓进空</a>
         </Link>
       </div>
       <div>
-        <Link href='/jspangB'>
-          <a>jspangB</a>
-        </Link>
-      </div>
-      <div>
-        <button onClick={gotoA}>去A</button>
-        <button onClick={gotoA}>去B</button>
+        <button onClick={gotoXJJ}>选井孔</button>
       </div>
     </>
   )
